@@ -49,3 +49,20 @@ a#site-name {
     font-weight: bold;
     font-size: large;
 }
+
+.post-footer {
+    border-top: 1px solid #888;
+    padding-top: 1em;
+}
+.post-footer ul {
+    display: inline;
+    padding: 0;
+}
+.post-footer li {
+    display: inline-block;
+}
+.post-footer li:not(:first-child)::before {
+    content: "/";
+    margin-left: 1ex;
+    margin-right: 1ex;
+}

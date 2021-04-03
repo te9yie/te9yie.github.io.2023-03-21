@@ -6,7 +6,7 @@ const Body = ({ children, title }) => (
   <>
     <Nav />
     <Title title={title} />
-    <article>{children}</article>
+    {children}
     <Footer />
   </>
 );
