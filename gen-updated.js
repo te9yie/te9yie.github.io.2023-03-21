@@ -9,7 +9,7 @@ const GEN_FILE = path.join(GEN_DIR, "updated.json");
 const list = fs.readdirSync(POSTS_DIR).map((file) => {
   const filePath = path.join("posts", file);
   const updated = execSync(
-    `git log -1 --pretty="%ad" --date=format:"%Y-%m-%d %H:%M:%S" -- ${filePath}`
+    `git log -1 --pretty="%ad" --date=format:"%Y-%m-%d %H:%M:%S" -- "${filePath}"`
   )
     .toString()
     .trim();
