@@ -1,28 +1,15 @@
 import Link from "next/link";
 
-const RefLinks = ({ postData }) => {
-  return postData.refLinks.length > 0 ? (
-    <div className="ref-links">
-      ref links:{" "}
-      <ul>
-        {postData.refLinks.map((link) => (
-          <li key={link}>
-            <Link href={`/${link}`}>
-              <a>{link}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  ) : null;
+const LastUpdate = ({ date }) => {
+  return date ? <div>last update: {date}</div> : null;
 };
 
-const Links = ({ postData }) => {
-  return postData.links.length > 0 ? (
+const Links = ({ name, links }) => {
+  return links.length > 0 ? (
     <div className="links">
-      links:{" "}
+      {name}:{" "}
       <ul>
-        {postData.links.map((link) => (
+        {links.map((link) => (
           <li key={link}>
             <Link href={`/${link}`}>
               <a>{link}</a>
@@ -36,8 +23,9 @@ const Links = ({ postData }) => {
 
 const PostFooter = ({ postData }) => (
   <div className="post-footer">
-    <RefLinks postData={postData} />
-    <Links postData={postData} />
+    <LastUpdate date={postData.lastUpdate} />
+    <Links name="ref links" links={postData.refLinks} />
+    <Links name="links" links={postData.links} />
   </div>
 );
 

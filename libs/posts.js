@@ -26,23 +26,27 @@ export const getSortedAllPostIds = () => {
     .map((post) => {
       return {
         id: post.id,
-        updated: post.updated,
+        lastUpdate: post.updated,
       };
     });
 };
 
 export const getPostData = (id) => {
+  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
-  const post = linksJson.find((post) => post.id == id);
+  const updatedData = updatedJson.find((data) => data.id === id);
+  const linkData = linksJson.find((post) => post.id === id);
   const fullPath = path.join(POST_DIR, `${id}.md`);
   const content = fs.existsSync(fullPath)
     ? fs.readFileSync(fullPath, "utf8")
     : "";
-  const refLinks = post && post.refLinks ? post.refLinks : [];
-  const links = post && post.links ? post.links : [];
+  const lastUpdate = updatedData?.updated ?? null;
+  const refLinks = linkData?.refLinks ?? [];
+  const links = linkData?.links ?? [];
   return {
     id,
     content,
+    lastUpdate,
     refLinks,
     links,
   };
