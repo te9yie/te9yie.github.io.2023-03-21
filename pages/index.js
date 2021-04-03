@@ -7,8 +7,9 @@ const IndexPage = ({ ids }) => {
   const List = () => {
     return ids.length === 0 ? null : (
       <ul>
-        {ids.map(({ id }) => (
+        {ids.map(({ id, updated }) => (
           <li key={id}>
+            {updated}{" "}
             <Link href={id}>
               <a>{id}</a>
             </Link>

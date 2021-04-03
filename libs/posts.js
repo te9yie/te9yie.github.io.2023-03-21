@@ -26,6 +26,7 @@ export const getSortedAllPostIds = () => {
     .map((post) => {
       return {
         id: post.id,
+        updated: post.updated,
       };
     });
 };
