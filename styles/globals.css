@@ -3,6 +3,29 @@ html {
     margin: 0 auto;
 }
 
+body {
+    color: #2b2b2b;
+}
+
+pre {
+    margin: 1em;
+    overflow: auto;
+}
+code {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+pre code {
+    margin: 0;
+}
+
+hr {
+    border: none;
+}
+hr:after {
+    content: "---";
+}
+
 nav ul {
     padding: 0;
 }
