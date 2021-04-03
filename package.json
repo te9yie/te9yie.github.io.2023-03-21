@@ -1,0 +1,19 @@
+{
+  "name": "te9yie.github.io",
+  "version": "1.0.0",
+  "author": "te9yie <te9yie@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^10.1.3",
+    "next-mdx-remote": "^2.1.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "remark-wiki-link": "^0.0.4"
+  }
+}
