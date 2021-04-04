@@ -4,7 +4,7 @@
 
 [Create a Next.js App | Learn Next.js](https://nextjs.org/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=homepage-cta&utm_campaign=next-website)
 
-ちょっとカスタマイズしたのが
+そこから少しカスタマイズ。
 
 - [[Markdown]]にメタ情報を記述せずに[[Markdown記事のメタ情報を収集する]]ようにした。
 - [[Wiki Link]]対応してカテゴリ分けとかタグ付けはしないことにした。
