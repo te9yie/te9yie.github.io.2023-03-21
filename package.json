@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build:links": "node gen-links.js",
     "build:updated": "node gen-updated.js",
-    "build": "yarn build:links && yarn build:updated && next build",
+    "build:gen": "yarn build:links && yarn build:updated",
+    "build": "yarn build:gen && next build",
     "start": "next start",
     "export": "next export"
   },

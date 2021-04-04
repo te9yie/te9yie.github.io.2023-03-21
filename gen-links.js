@@ -7,7 +7,7 @@ const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const GEN_FILE = path.join(GEN_DIR, "links.json");
 
-const getWikiLinks = (content) => {
+const getWikiLinks = (content, id) => {
   const { parse } = remark().use(wikiLinkPlugin);
   const ast = parse(content);
 
@@ -23,7 +23,9 @@ const getWikiLinks = (content) => {
     }
   });
 
-  return links.filter((link, i, self) => self.indexOf(link) === i);
+  return links
+    .filter((link, i, self) => self.indexOf(link) === i)
+    .filter((link) => link !== id);
 };
 
 let posts = new Map();
@@ -35,7 +37,7 @@ fs.readdirSync(POSTS_DIR).forEach((fileName) => {
   }
   const filePath = path.join(POSTS_DIR, fileName);
   const content = fs.readFileSync(filePath, "utf8");
-  const links = getWikiLinks(content);
+  const links = getWikiLinks(content, id);
   if (links.length > 0) {
     posts.get(id).set("links", links);
     links.forEach((link) => {
@@ -71,7 +73,7 @@ posts.forEach((value, key) => {
     links.length > 0
       ? links
           .filter((link, i, self) => self.indexOf(link) === i)
-          .filter((link) => link != key)
+          .filter((link) => link !== key)
           .filter((link) => !postLinks.includes(link))
           .filter((link) => !postRefLinks.includes(link))
       : undefined;
