@@ -18,6 +18,9 @@ const list = fs.readdirSync(POSTS_DIR).map((file) => {
     updated,
   };
 });
+list.sort((a, b) => {
+  return a.updated < b.updated ? 1 : -1;
+});
 
 fs.mkdirSync(GEN_DIR, { recursive: true });
 fs.writeFileSync(GEN_FILE, JSON.stringify(list));

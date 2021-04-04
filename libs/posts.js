@@ -19,16 +19,12 @@ export const getAllPostIds = () => {
 
 export const getSortedAllPostIds = () => {
   const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
-  return updatedJson
-    .sort((a, b) => {
-      return a.updated < b.updated ? 1 : -1;
-    })
-    .map((post) => {
-      return {
-        id: post.id,
-        lastUpdate: post.updated,
-      };
-    });
+  return updatedJson.map((post) => {
+    return {
+      id: post.id,
+      lastUpdate: post.updated,
+    };
+  });
 };
 
 export const getPostData = (id) => {

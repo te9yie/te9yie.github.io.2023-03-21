@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build:links": "node gen-links.js",
     "build:updated": "node gen-updated.js",
-    "build:gen": "yarn build:links && yarn build:updated",
+    "build:links": "node gen-links.js",
+    "build:gen": "yarn build:updated && yarn build:links",
     "build": "yarn build:gen && next build",
     "start": "next start",
     "export": "next export"
