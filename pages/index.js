@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Title from "../components/Title";
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { getSortedAllPostIds } from "../libs/posts";
 
@@ -21,6 +22,7 @@ const IndexPage = ({ ids }) => {
   return (
     <>
       <Title />
+      <Nav isIndex={true} />
       <List />
       <Footer />
     </>
