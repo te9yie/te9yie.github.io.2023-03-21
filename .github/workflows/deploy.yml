@@ -42,6 +42,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn export
+      - run: yarn export:rss
       - run: touch ./out/.nojekyll
       
       - name: Deploy

@@ -10,9 +10,11 @@
     "build:gen": "yarn build:updated && yarn build:links",
     "build": "yarn build:gen && next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "export:rss": "node gen-rss.js"
   },
   "dependencies": {
+    "feed": "^4.2.2",
     "next": "^10.1.3",
     "next-mdx-remote": "^2.1.3",
     "prism-react-renderer": "^1.2.0",
