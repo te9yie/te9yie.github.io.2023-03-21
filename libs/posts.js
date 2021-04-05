@@ -7,8 +7,8 @@ const LINKS_FILE = path.join(GEN_DIR, "links.json");
 const UPDATED_FILE = path.join(GEN_DIR, "updated.json");
 
 export const getAllPostIds = () => {
-  const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
-  return linksJson.map((post) => {
+  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
+  return updatedJson.map((post) => {
     return {
       params: {
         id: post.id,
@@ -32,9 +32,9 @@ export const getPostData = (id) => {
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
   const updatedData = updatedJson.find((data) => data.id === id);
   const linkData = linksJson.find((post) => post.id === id);
-  const fullPath = path.join(POST_DIR, `${id}.md`);
-  const content = fs.existsSync(fullPath)
-    ? fs.readFileSync(fullPath, "utf8")
+  const filePath = path.join(POST_DIR, `${id}.md`);
+  const content = fs.existsSync(filePath)
+    ? fs.readFileSync(filePath, "utf8")
     : "";
   const lastUpdate = updatedData?.updated ?? null;
   const refLinks = linkData?.refLinks ?? [];

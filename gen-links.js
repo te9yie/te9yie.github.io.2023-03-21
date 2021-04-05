@@ -28,27 +28,26 @@ const getWikiLinks = (content, id) => {
     .filter((link) => link !== id);
 };
 
+const getOrDefault = (map, key, value) => {
+  if (!map.has(key)) {
+    map.set(key, value);
+  }
+  return map.get(key);
+};
+
 let posts = new Map();
 
 fs.readdirSync(POSTS_DIR).forEach((fileName) => {
   const id = fileName.replace(/\.md$/, "");
-  if (!posts.has(id)) {
-    posts.set(id, new Map());
-  }
+  const post = getOrDefault(posts, id, new Map());
   const filePath = path.join(POSTS_DIR, fileName);
   const content = fs.readFileSync(filePath, "utf8");
   const links = getWikiLinks(content, id);
   if (links.length > 0) {
-    posts.get(id).set("links", links);
+    post.set("links", links);
     links.forEach((link) => {
-      if (!posts.has(link)) {
-        posts.set(link, new Map());
-      }
-      const refPost = posts.get(link);
-      if (!refPost.has("refLinks")) {
-        refPost.set("refLinks", new Array());
-      }
-      refPost.get("refLinks").push(id);
+      const refPost = getOrDefault(posts, link, new Map());
+      getOrDefault(refPost, "refLinks", new Array()).push(id);
     });
   }
 });
