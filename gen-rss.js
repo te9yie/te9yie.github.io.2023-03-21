@@ -22,10 +22,12 @@ const genRss = () => {
   });
   posts.forEach((data) => {
     const link = encodeURI(`${SITE_URL}/${data.id}`);
+    const published = new Date(Date.parse(data.updated));
     feed.addItem({
       title: data.id,
       description: data.id,
       link,
+      published,
     });
   });
   fs.mkdirSync(OUT_DIR, { recursive: true });
