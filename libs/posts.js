@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const POST_DIR = path.join(process.cwd(), "posts");
+const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const LINKS_FILE = path.join(GEN_DIR, "links.json");
 const UPDATED_FILE = path.join(GEN_DIR, "updated.json");
@@ -32,7 +32,7 @@ export const getPostData = (id) => {
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
   const updatedData = updatedJson.find((data) => data.id === id);
   const linkData = linksJson.find((post) => post.id === id);
-  const filePath = path.join(POST_DIR, `${id}.md`);
+  const filePath = path.join(POSTS_DIR, `${id}.md`);
   const content = fs.existsSync(filePath)
     ? fs.readFileSync(filePath, "utf8")
     : "";
