@@ -7,8 +7,8 @@ const LINKS_FILE = path.join(GEN_DIR, "links.json");
 const UPDATED_FILE = path.join(GEN_DIR, "updated.json");
 
 export const getAllPostIds = () => {
-  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
-  return updatedJson.map((post) => {
+  const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
+  return linksJson.map((post) => {
     return {
       params: {
         id: post.id,
