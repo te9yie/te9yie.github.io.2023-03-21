@@ -11,7 +11,7 @@ const IndexPage = ({ ids }) => {
         {ids.map(({ id, lastUpdate }) => (
           <li key={id}>
             {lastUpdate}{" "}
-            <Link href={id}>
+            <Link href={`/${id}`}>
               <a>{id}</a>
             </Link>
           </li>
