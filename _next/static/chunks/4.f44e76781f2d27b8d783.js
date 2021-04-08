@@ -1,0 +1,1 @@
+(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[4],{Vyax:function(e,n,o){"use strict";o.r(n);var t=180;n.default={setup:function(e,n){e.createCanvas(320,t).parent(n),e.rectMode(e.CENTER),e.noStroke()},draw:function(e){var n=e.mouseY-90;e.background(222),e.fill("#e60033"),e.rect(320-e.mouseX,90,80-n,80-n),e.rect(e.mouseX,90,80+n,80+n)}}}}]);
