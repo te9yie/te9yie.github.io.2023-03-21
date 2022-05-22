@@ -2,13 +2,14 @@ import fs from "fs";
 import path from "path";
 import { remark } from "remark";
 import wikiLinkPlugin from "remark-wiki-link";
+import remarkGfm from "remark-gfm";
 
 const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const GEN_FILE = path.join(GEN_DIR, "links.json");
 
 const getWikiLinks = (content, id) => {
-  const { parse } = remark().use(wikiLinkPlugin);
+  const { parse } = remark(remarkGfm).use().use(wikiLinkPlugin);
   const ast = parse(content);
 
   let links = new Array();
@@ -18,8 +19,8 @@ const getWikiLinks = (content, id) => {
     (node.children || []).forEach((child) => walk(child, callback));
   };
   walk(ast, (node) => {
-    if (node.type === "linkReference") {
-      links.push(node.label);
+    if (node.type === "wikiLink") {
+      links.push(node.value);
     }
   });
 
