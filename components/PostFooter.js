@@ -26,10 +26,14 @@ const Links = ({ name, links }) => {
 
 const PostFooter = ({ postData }) => (
   <div className="post-footer">
-    <CreateAt date={postData.create_at} />
-    <UpdateAt date={postData.update_at} />
-    <Links name="ref links" links={postData.refLinks} />
-    <Links name="links" links={postData.links} />
+    <div className="date">
+      <CreateAt date={postData.create_at} />
+      <UpdateAt date={postData.update_at} />
+    </div>
+    <div className="link">
+      <Links name="ref links" links={postData.refLinks} />
+      <Links name="links" links={postData.links} />
+    </div>
   </div>
 );
 
