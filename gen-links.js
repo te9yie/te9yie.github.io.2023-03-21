@@ -9,7 +9,7 @@ const GEN_DIR = path.join(process.cwd(), "gen");
 const GEN_FILE = path.join(GEN_DIR, "links.json");
 
 const getWikiLinks = (content, id) => {
-  const { parse } = remark(remarkGfm).use().use(wikiLinkPlugin);
+  const { parse } = remark().use(remarkGfm).use(wikiLinkPlugin);
   const ast = parse(content);
 
   let links = new Array();
