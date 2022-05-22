@@ -1,10 +1,9 @@
 {
-  "name": "te9yie.github.io",
-  "version": "1.0.0",
-  "author": "te9yie <te9yie@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
+    "lint": "next lint",
     "build:updated": "node gen-updated.js",
     "build:links": "node gen-links.js",
     "build:gen": "yarn build:updated && yarn build:links",
@@ -14,15 +13,17 @@
     "export:rss": "node gen-rss.js"
   },
   "dependencies": {
-    "@loadable/component": "^5.14.1",
     "feed": "^4.2.2",
-    "next": "^10.1.3",
-    "next-mdx-remote": "^2.1.3",
-    "prism-react-renderer": "^1.2.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-p5": "^1.3.19",
-    "remark": "^12.0.0",
-    "remark-wiki-link": "^0.0.4"
+    "next": "^12.1.6",
+    "next-mdx-remote": "^4.0.3",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-wiki-link": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6"
   }
 }

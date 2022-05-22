@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const { Feed } = require("feed");
+import fs from "fs";
+import path from "path";
+import { Feed } from "feed";
 
 const SITE_URL = "https://te9yie.github.io";
 const GEN_DIR = path.join(process.cwd(), "gen");

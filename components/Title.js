@@ -10,19 +10,6 @@ const Title = ({ title }) => {
       <Head>
         <title>{titleInHead}</title>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="te9yie.github.io"
-          href="/rss.xml"
-        />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-          integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
-          crossOrigin="anonymous"
-        ></link>
       </Head>
       <header>
         <h1>{titleInH1}</h1>

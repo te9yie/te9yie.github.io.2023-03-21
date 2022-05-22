@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const remark = require("remark");
-const { wikiLinkPlugin } = require("remark-wiki-link");
+import fs from "fs";
+import path from "path";
+import { remark } from "remark";
+import wikiLinkPlugin from "remark-wiki-link";
 
 const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");

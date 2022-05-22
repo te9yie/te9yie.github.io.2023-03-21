@@ -1,0 +1,12 @@
+{
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "16-bullseye"
+    }
+  },
+  "settings": {},
+  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+  "remoteUser": "node"
+}

@@ -10,6 +10,7 @@ const P5Sketch = ({ name }) => {
       setSketch(m);
     };
     f();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
