@@ -4,9 +4,16 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Sun, 22 May 2022 04:00:20 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 22 May 2022 04:10:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Git でファイルの作成日を取得する]]></title>
+            <link>https://te9yie.github.io/Git%20%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B</link>
+            <guid>https://te9yie.github.io/Git%20%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B</guid>
+            <pubDate>Sun, 22 May 2022 13:09:41 GMT</pubDate>
+            <description><![CDATA[Git でファイルの作成日を取得する]]></description>
+        </item>
         <item>
             <title><![CDATA[ブログを忘れていた]]></title>
             <link>https://te9yie.github.io/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E5%BF%98%E3%82%8C%E3%81%A6%E3%81%84%E3%81%9F</link>
@@ -34,13 +41,6 @@
             <guid>https://te9yie.github.io/Next.js%20%E3%81%A7%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B</guid>
             <pubDate>Sun, 22 May 2022 12:37:04 GMT</pubDate>
             <description><![CDATA[Next.js でサイトをつくる]]></description>
-        </item>
-        <item>
-            <title><![CDATA[GitHub Actions の checkout アクション]]></title>
-            <link>https://te9yie.github.io/GitHub%20Actions%20%E3%81%AE%20checkout%20%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3</link>
-            <guid>https://te9yie.github.io/GitHub%20Actions%20%E3%81%AE%20checkout%20%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3</guid>
-            <pubDate>Sun, 22 May 2022 12:37:04 GMT</pubDate>
-            <description><![CDATA[GitHub Actions の checkout アクション]]></description>
         </item>
     </channel>
 </rss>
