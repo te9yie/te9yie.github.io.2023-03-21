@@ -5,12 +5,12 @@ import { Feed } from "feed";
 const SITE_URL = "https://te9yie.github.io";
 const GEN_DIR = path.join(process.cwd(), "gen");
 const OUT_DIR = path.join(process.cwd(), "out");
-const UPDATED_FILE = path.join(GEN_DIR, "updated.json");
+const DATE_FILE = path.join(GEN_DIR, "date.json");
 const RSS_FILE = path.join(OUT_DIR, "rss.xml");
 
 const getSortedPostsData = (n) => {
-  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
-  return updatedJson.slice(0, 5);
+  const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
+  return dateJson.slice(0, 5);
 };
 
 const genRss = () => {
@@ -22,7 +22,7 @@ const genRss = () => {
   });
   posts.forEach((data) => {
     const link = encodeURI(`${SITE_URL}/${data.id}`);
-    const published = new Date(Date.parse(data.updated));
+    const published = new Date(Date.parse(data.update_at));
     feed.addItem({
       title: data.id,
       description: data.id,

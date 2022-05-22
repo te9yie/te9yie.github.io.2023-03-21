@@ -1,7 +1,10 @@
 import Link from "next/link";
 
-const LastUpdate = ({ date }) => {
-  return date ? <div>last update: {date}</div> : null;
+const CreateAt = ({ date }) => {
+  return date ? <div>create at: {date}</div> : null;
+};
+const UpdateAt = ({ date }) => {
+  return date ? <div>update at: {date}</div> : null;
 };
 
 const Links = ({ name, links }) => {
@@ -23,7 +26,8 @@ const Links = ({ name, links }) => {
 
 const PostFooter = ({ postData }) => (
   <div className="post-footer">
-    <LastUpdate date={postData.lastUpdate} />
+    <CreateAt date={postData.create_at} />
+    <UpdateAt date={postData.update_at} />
     <Links name="ref links" links={postData.refLinks} />
     <Links name="links" links={postData.links} />
   </div>

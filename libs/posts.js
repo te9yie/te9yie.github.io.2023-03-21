@@ -4,7 +4,7 @@ import path from "path";
 const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const LINKS_FILE = path.join(GEN_DIR, "links.json");
-const UPDATED_FILE = path.join(GEN_DIR, "updated.json");
+const DATE_FILE = path.join(GEN_DIR, "date.json");
 
 export const getAllPostIds = () => {
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
@@ -18,31 +18,34 @@ export const getAllPostIds = () => {
 };
 
 export const getSortedAllPostIds = () => {
-  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
-  return updatedJson.map((post) => {
+  const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
+  return dateJson.map((post) => {
     return {
       id: post.id,
-      lastUpdate: post.updated,
+      create_at: post.create_at,
+      update_at: post.update_at,
     };
   });
 };
 
 export const getPostData = (id) => {
-  const updatedJson = JSON.parse(fs.readFileSync(UPDATED_FILE, "utf8"));
+  const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
-  const updatedData = updatedJson.find((data) => data.id === id);
+  const dateData = dateJson.find((data) => data.id === id);
   const linkData = linksJson.find((post) => post.id === id);
   const filePath = path.join(POSTS_DIR, `${id}.md`);
   const content = fs.existsSync(filePath)
     ? fs.readFileSync(filePath, "utf8")
     : "";
-  const lastUpdate = updatedData?.updated ?? null;
+  const create_at = dateData?.create_at ?? null;
+  const update_at = dateData?.update_at ?? null;
   const refLinks = linkData?.refLinks ?? [];
   const links = linkData?.links ?? [];
   return {
     id,
     content,
-    lastUpdate,
+    create_at,
+    update_at,
     refLinks,
     links,
   };
