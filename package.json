@@ -10,9 +10,11 @@
     "build": "yarn build:gen && next build",
     "start": "next start",
     "export": "next export",
-    "export:rss": "node gen-rss.js"
+    "export:rss": "node gen-rss.js",
+    "export:grass": "node gen-grass.js"
   },
   "dependencies": {
+    "canvas": "^2.9.1",
     "feed": "^4.2.2",
     "next": "^12.1.6",
     "next-mdx-remote": "^4.0.3",
