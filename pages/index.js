@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Title from "../components/Title";
 import Nav from "../components/Nav";
@@ -25,7 +25,7 @@ const IndexPage = ({ ids }) => {
       <Title />
       <Nav isIndex={true} />
       <div className="grass">
-        <Image src="/grass.png" alt="grass" width={540} height={70} />
+        <img src="/grass.png" alt="grass" width={540} height={70} />
       </div>
       <List />
       <Footer />
