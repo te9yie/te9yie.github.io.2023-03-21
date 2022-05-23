@@ -59,4 +59,5 @@ const draw_grass = (ctx, dateList) => {
 
 draw_grass(ctx, dateList);
 
+fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(GRASS_FILE, canvas.toBuffer("image/png"));
