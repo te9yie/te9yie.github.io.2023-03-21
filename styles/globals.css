@@ -70,4 +70,5 @@ a#site-name {
 
 .grass {
     text-align: center;
+    overflow: auto;
 }
