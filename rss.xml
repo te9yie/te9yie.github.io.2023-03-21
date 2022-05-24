@@ -4,9 +4,23 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Tue, 24 May 2022 00:08:12 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 24 May 2022 19:10:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[p5.js in Next.js]]></title>
+            <link>https://te9yie.github.io/p5.js%20in%20Next.js</link>
+            <guid>https://te9yie.github.io/p5.js%20in%20Next.js</guid>
+            <pubDate>Tue, 24 May 2022 22:14:29 GMT</pubDate>
+            <description><![CDATA[p5.js in Next.js]]></description>
+        </item>
+        <item>
+            <title><![CDATA[2022-05-24]]></title>
+            <link>https://te9yie.github.io/2022-05-24</link>
+            <guid>https://te9yie.github.io/2022-05-24</guid>
+            <pubDate>Tue, 24 May 2022 04:40:29 GMT</pubDate>
+            <description><![CDATA[2022-05-24]]></description>
+        </item>
         <item>
             <title><![CDATA[2022-05-23]]></title>
             <link>https://te9yie.github.io/2022-05-23</link>
@@ -27,20 +41,6 @@
             <guid>https://te9yie.github.io/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E5%BF%98%E3%82%8C%E3%81%A6%E3%81%84%E3%81%9F</guid>
             <pubDate>Sun, 22 May 2022 12:44:35 GMT</pubDate>
             <description><![CDATA[ブログを忘れていた]]></description>
-        </item>
-        <item>
-            <title><![CDATA[gettimeofday() は廃止予定]]></title>
-            <link>https://te9yie.github.io/gettimeofday()%20%E3%81%AF%E5%BB%83%E6%AD%A2%E4%BA%88%E5%AE%9A</link>
-            <guid>https://te9yie.github.io/gettimeofday()%20%E3%81%AF%E5%BB%83%E6%AD%A2%E4%BA%88%E5%AE%9A</guid>
-            <pubDate>Sun, 22 May 2022 12:37:04 GMT</pubDate>
-            <description><![CDATA[gettimeofday() は廃止予定]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Wiki Link をタグ代わりに使う]]></title>
-            <link>https://te9yie.github.io/Wiki%20Link%20%E3%82%92%E3%82%BF%E3%82%B0%E4%BB%A3%E3%82%8F%E3%82%8A%E3%81%AB%E4%BD%BF%E3%81%86</link>
-            <guid>https://te9yie.github.io/Wiki%20Link%20%E3%82%92%E3%82%BF%E3%82%B0%E4%BB%A3%E3%82%8F%E3%82%8A%E3%81%AB%E4%BD%BF%E3%81%86</guid>
-            <pubDate>Sun, 22 May 2022 12:37:04 GMT</pubDate>
-            <description><![CDATA[Wiki Link をタグ代わりに使う]]></description>
         </item>
     </channel>
 </rss>
