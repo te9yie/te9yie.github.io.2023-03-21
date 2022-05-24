@@ -1,6 +1,7 @@
 name: deploy
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 19 * * *"
 
@@ -29,7 +30,7 @@ jobs:
       - run: yarn build
       - run: yarn export
       - run: yarn export:rss
-      - run: yarn export:grass
+      - run: TZ=Asia/Tokyo yarn export:grass
       - run: touch ./out/.nojekyll
 
       - name: Deploy
