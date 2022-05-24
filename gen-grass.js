@@ -4,7 +4,9 @@ import pkg from "canvas";
 import { execSync } from "child_process";
 const { createCanvas } = pkg;
 
+const GEN_DIR = path.join(process.cwd(), "gen");
 const OUT_DIR = path.join(process.cwd(), "out");
+const DATE_FILE = path.join(GEN_DIR, "date.json");
 const GRASS_FILE = path.join(OUT_DIR, "grass.png");
 
 const box_r = 10;
@@ -14,15 +16,27 @@ const inactive_color = "#ccc";
 const width = box_r * (week_n + 2);
 const height = box_r * 7;
 
-const dateList = execSync(
-  `git log --pretty="%ad" --date=format:"%Y-%m-%d" |uniq`
-)
-  .toString()
-  .split(/\n/)
-  .filter((s) => s.length > 0);
+const getDateListFromGit = () => {
+  return execSync(`git log --pretty="%ad" --date=format:"%Y-%m-%d" |uniq`)
+    .toString()
+    .split(/\n/)
+    .filter((s) => s.length > 0);
+};
+const getDateListFromPosts = () => {
+  const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
+  return dateJson
+    .map((data) => [
+      data.create_at.substring(0, 10),
+      data.update_at.substring(0, 10),
+    ])
+    .flat()
+    .filter((date, i, self) => self.indexOf(date) === i);
+};
 
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
+//const dateList = getDateListFromGit();
+const dateList = getDateListFromPosts();
 
 let now = new Date();
 let month = (now.getMonth() + 1).toString().padStart(2, 0);
