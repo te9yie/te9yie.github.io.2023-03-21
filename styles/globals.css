@@ -9,14 +9,9 @@ body {
 
 pre {
     margin: 1em;
+    padding: 1em;
     overflow: auto;
-}
-code {
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-}
-pre code {
-    margin: 0;
+    background-color: #eee;
 }
 
 hr {
@@ -71,4 +66,8 @@ a#site-name {
 .grass {
     text-align: center;
     overflow: auto;
+}
+
+.sketch {
+    text-align: center;
 }
