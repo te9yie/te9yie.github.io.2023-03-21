@@ -68,6 +68,10 @@ a#site-name {
     overflow: auto;
 }
 
+.daily {
+    border-bottom: 1px solid #888;
+}
+
 .sketch {
     text-align: center;
 }

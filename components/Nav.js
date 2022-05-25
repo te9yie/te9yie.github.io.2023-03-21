@@ -23,6 +23,11 @@ const Nav = ({ isIndex }) => {
           </Link>
         </li>
         <li>
+          <Link href="/archive">
+            <a>一覧</a>
+          </Link>
+        </li>
+        <li>
           <Link href="https://www.google.com/search?q=site:te9yie.github.io">
             <a>検索</a>
           </Link>

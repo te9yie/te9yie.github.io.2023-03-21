@@ -6,6 +6,19 @@ const GEN_DIR = path.join(process.cwd(), "gen");
 const LINKS_FILE = path.join(GEN_DIR, "links.json");
 const DATE_FILE = path.join(GEN_DIR, "date.json");
 
+export const getDailyPostIds = () => {
+  return fs
+    .readdirSync(POSTS_DIR)
+    .map((fileName) => {
+      const r = fileName.match(/^\d{4}-\d{2}-\d{2}.md$/);
+      if (!r) return null;
+      return fileName.replace(/\.md$/, "");
+    })
+    .filter((id) => id != null)
+    .sort()
+    .reverse();
+};
+
 export const getAllPostIds = () => {
   const linksJson = JSON.parse(fs.readFileSync(LINKS_FILE, "utf8"));
   return linksJson.map((post) => {
