@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
+const Sketch = dynamic(() => import("react-p5").then((m) => m.default), {
   ssr: false,
 });
 
