@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Wed, 25 May 2022 19:10:34 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 May 2022 19:10:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[2022-05-26]]></title>
+            <link>https://te9yie.github.io/2022-05-26</link>
+            <guid>https://te9yie.github.io/2022-05-26</guid>
+            <pubDate>Thu, 26 May 2022 22:31:50 GMT</pubDate>
+            <description><![CDATA[2022-05-26]]></description>
+            <content:encoded><![CDATA[<p><a href="/RSS">RSS</a> の出力を調整していた。</p>
+<p>そういえば、最近は RSS って使われてなくなっているんだろうか。自分は RSS リーダーを毎日使うし、RSS のないサイトにがっかりしたりもする。RSS の代替手段ってなんなんだろう。</p>
+<p>RSS リーダーは Feedly を使っている。</p>
+<p><a href="https://feedly.com/">https://feedly.com/</a></p>
+<p>いつの間にか有料化していて無料だと 100 件までしか登録できないらしい。でも自分は無料ユーザーなんだけど 100 件以上登録できるし追加もできている…なぜなんだろう。古参ユーザーの特典なんだろうか。Livedoor Reader を使っていてサービス終了するって聞いて移行したからもう何年前なんだろうか。</p>
+<hr>
+<p><a href="/p5.js">p5.js</a> でシェーダーが使えることが分かった。</p>
+<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/libs/p5/shader00.js">https://github.com/te9yie/te9yie.github.io/blob/main/libs/p5/shader00.js</a></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-05-25]]></title>
             <link>https://te9yie.github.io/2022-05-25</link>
             <guid>https://te9yie.github.io/2022-05-25</guid>
             <pubDate>Wed, 25 May 2022 19:08:55 GMT</pubDate>
             <description><![CDATA[2022-05-25]]></description>
+            <content:encoded><![CDATA[<p>このサイトが更新される時間を朝の 4 時にしようと思って <a href="/GitHub Actions">GitHub Actions</a> には schedule trigger を設定しておいた。</p>
+<pre><code>on:
+  schedule:
+    - cron: "0 19 * * *"
+</code></pre>
+<p>どうもその時間に動いたみたいなんだけど、<a href="/草画像">草画像</a>が今日更新された状態になっていない。多分、<a href="/JavaScript">JavaScript</a> で <code>new Date()</code> したときに JST でなく UTC で判定されている気がする。タイムゾーンを設定して実行するようにしてみた。これで上手く動くといいんだけど。</p>
+<hr>
+<p>タイトルを付けることが面倒な日々のメモは日付をタイトルにしている。このフォーマットで書かれたページだけ日誌みたいな感じで別管理にしようかなと思った。トップページで直近何日か分くらいが展開されて見えるようになっているとか、日誌ページに列挙されるとか。</p>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[2022-05-24]]></title>
@@ -20,6 +45,14 @@
             <guid>https://te9yie.github.io/2022-05-24</guid>
             <pubDate>Wed, 25 May 2022 09:01:53 GMT</pubDate>
             <description><![CDATA[2022-05-24]]></description>
+            <content:encoded><![CDATA[<p>更新履歴から<a href="/草画像">草画像</a>をつくるプログラムはできた。</p>
+<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/gen-grass.js">https://github.com/te9yie/te9yie.github.io/blob/main/gen-grass.js</a></p>
+<p>この画像は毎日更新されるようにしたい。<a href="/cron">cron</a> みたいなもので画像を更新できればいいんだけど、<a href="/GitHub Actions">GitHub Actions</a> で <code>gh-pages</code> ブランチの一ファイルを更新する方法がよく分からない。とりあえず全ビルド回す感じでいいか…</p>
+<p>そうなるとリポジトリへの <code>push</code> をトリガーにしてビルド回す意味もあまりないかなという気がしてきた。一日一回更新されるで問題ない気がする。こういう GitHub Actions の動作テストってうまいやり方あるんだろうか。何かミスっていても一日一回しか確認できないのは辛い。</p>
+<p><a href="/act">act</a> という GitHub Actions をローカルで実行できるものがあるらしい。</p>
+<p><a href="https://github.com/nektos/act">https://github.com/nektos/act</a></p>
+<p>でも <code>gh-pages</code> ブランチにファイルコピーとかテストも結構厳しい気がするなあ。</p>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[2022-05-23]]></title>
@@ -27,6 +60,27 @@
             <guid>https://te9yie.github.io/2022-05-23</guid>
             <pubDate>Wed, 25 May 2022 09:01:53 GMT</pubDate>
             <description><![CDATA[2022-05-23]]></description>
+            <content:encoded><![CDATA[<p>このサイトがいつ頃更新されたか、更新頻度はどんな感じか分かるといいなあと思った。そういえば <a href="/GitHub">GitHub</a> で草が生える仕組みがそれっぽい。サイトの更新情報から GitHub の<a href="/草画像">草画像</a>のようなものを生成する、そんなものを作ってみたい。</p>
+<p>記事の履歴で取るか、<a href="/Git">Git</a> の履歴で取るか、記事の履歴で取るなら最新だけとるのか、色々仕様は考えられる。まずは一番簡単そうな Git の履歴で取ってみるか…</p>
+<p>画像の生成は <a href="/Node.js">Node.js</a> でやりたい。リンク情報つくったりも Node.js でやっているし。Canvas に描いた画像を出力する、みたいなことができればよいと思う。そんなことできるのかは知らんけど。</p>
+<p>Node.js で画像出力を調べているときに <a href="/Deno">Deno</a> というものを見つけた。</p>
+<p><a href="https://deno.land/">https://deno.land/</a></p>
+<p>Node.js の進化版みたいな感じっぽい。URL で import できるあたりがすてき。<code>package.json</code> とかが必要なくなって <code>deno run &#x3C;file></code> で実行できてちょっとしたことならこれでいいんじゃないか感。</p>
+<p>Deno で Canvas に描いた絵を画像として出力するのはこんな感じでできる。</p>
+<pre><code>import { createCanvas } from "https://deno.land/x/canvas/mod.ts";
+
+const canvas = createCanvas(200, 200);
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "red";
+ctx.fillRect(50, 50, 200 - 100, 200 - 100);
+
+await Deno.writeFile("image.png", canvas.toBuffer());
+</code></pre>
+<p>そして実行はこれだけ</p>
+<pre><code>$ deno run --allow-write create-image.js
+</code></pre>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[p5.js in Next.js]]></title>
@@ -34,13 +88,16 @@
             <guid>https://te9yie.github.io/p5.js%20in%20Next.js</guid>
             <pubDate>Tue, 24 May 2022 22:14:29 GMT</pubDate>
             <description><![CDATA[p5.js in Next.js]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Git でファイルの作成日を取得する]]></title>
-            <link>https://te9yie.github.io/Git%20%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Git%20%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B</guid>
-            <pubDate>Sun, 22 May 2022 13:09:41 GMT</pubDate>
-            <description><![CDATA[Git でファイルの作成日を取得する]]></description>
+            <content:encoded><![CDATA[<p><a href="/Next.js">Next.js</a> 上で <a href="/p5.js">p5.js</a> が動かせないかなと思って調べると react-p5 というものがあった。</p>
+<p><a href="https://www.npmjs.com/package/react-p5">https://www.npmjs.com/package/react-p5</a></p>
+<p>p5.js のプログラム一つに対してコンポーネントを一つ作っていくというのも大げさだなと思うので、引数でスクリプトを指定できるようにしたい。</p>
+<pre><code>Markdown からはこんなかんじのタグで指定できるようになるといいな。
+
+&#x3C;P5Sketch name="スクリプト名" />
+</code></pre>
+<p>ちょこっと Next.js 用のサンプルをいじって対応した。</p>
+<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js">https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js</a></p>
+]]></content:encoded>
         </item>
     </channel>
 </rss>
