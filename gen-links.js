@@ -2,18 +2,13 @@ import fs from "fs";
 import path from "path";
 import { remark } from "remark";
 import wikiLinkPlugin from "remark-wiki-link";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
 
 const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const GEN_FILE = path.join(GEN_DIR, "links.json");
 
 const getWikiLinks = (content, id) => {
-  const { parse } = remark()
-    .use(remarkBreaks)
-    .use(remarkGfm)
-    .use(wikiLinkPlugin);
+  const { parse } = remark().use(wikiLinkPlugin);
   const ast = parse(content);
 
   let links = new Array();

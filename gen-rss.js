@@ -1,8 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { Feed } from "feed";
+import { remark } from "remark";
+import wikiLinkPlugin from "remark-wiki-link";
+import remarkGfm from "remark-gfm";
+import remarkHtml from "remark-html";
 
 const SITE_URL = "https://te9yie.github.io";
+const POSTS_DIR = path.join(process.cwd(), "posts");
 const GEN_DIR = path.join(process.cwd(), "gen");
 const OUT_DIR = path.join(process.cwd(), "out");
 const DATE_FILE = path.join(GEN_DIR, "date.json");
@@ -10,7 +15,7 @@ const RSS_FILE = path.join(OUT_DIR, "rss.xml");
 
 const getSortedPostsData = (n) => {
   const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
-  return dateJson.slice(0, 5);
+  return dateJson.slice(0, n);
 };
 
 const genRss = () => {
@@ -21,6 +26,18 @@ const genRss = () => {
     link: SITE_URL,
   });
   posts.forEach((data) => {
+    const content = fs.readFileSync(
+      path.join(POSTS_DIR, `${data.id}.md`),
+      "utf8"
+    );
+    const contentHtml = remark()
+      .use(remarkGfm)
+      .use(wikiLinkPlugin, {
+        pageResolver: (name) => [name],
+        hrefTemplate: (link) => `/${link}`,
+      })
+      .use(remarkHtml)
+      .processSync(content).value;
     const link = encodeURI(`${SITE_URL}/${data.id}`);
     const published = new Date(Date.parse(data.update_at));
     feed.addItem({
@@ -28,6 +45,7 @@ const genRss = () => {
       description: data.id,
       link,
       published,
+      content: contentHtml,
     });
   });
   fs.mkdirSync(OUT_DIR, { recursive: true });

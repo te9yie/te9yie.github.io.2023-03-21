@@ -16,7 +16,7 @@ export const remarkPlugins = [
     wikiLinkPlugin,
     {
       pageResolver: (name) => [name],
-      hrefTemplate: (link) => link,
+      hrefTemplate: (link) => `/${link}`,
     },
   ],
 ];
