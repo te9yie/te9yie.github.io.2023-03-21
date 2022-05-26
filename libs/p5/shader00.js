@@ -3,7 +3,6 @@ const HEIGHT = 9 * 20;
 
 const VERT = `
 precision mediump float;
-
 attribute vec3 aPosition;
 
 void main() {
