@@ -21,7 +21,9 @@ const IndexPage = ({ daily, ids }) => {
       <div className="daily">
         {daily.map((postData) => (
           <article key={postData.id}>
-            <h2>{postData.id}</h2>
+            <h2>
+              <Link href={`/${postData.id}`}>{postData.id}</Link>
+            </h2>
             <MDXRemote {...postData.content} components={components} />
           </article>
         ))}

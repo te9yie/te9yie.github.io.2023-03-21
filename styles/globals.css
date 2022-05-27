@@ -44,6 +44,11 @@ a#site-name {
     font-size: large;
 }
 
+h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .post-footer {
     border-top: 1px solid #888;
 }
