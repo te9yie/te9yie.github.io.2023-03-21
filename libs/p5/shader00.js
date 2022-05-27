@@ -2,7 +2,7 @@ const WIDTH = 16 * 20;
 const HEIGHT = 9 * 20;
 
 const VERT = `
-precision mediump float;
+precision highp float;
 attribute vec3 aPosition;
 
 void main() {
