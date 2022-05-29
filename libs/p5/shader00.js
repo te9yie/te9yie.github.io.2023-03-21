@@ -70,7 +70,7 @@ const setup = (p, parent) => {
 
 const draw = (p) => {
   a_shader.setUniform("uTime", p.frameCount / 30.0);
-  a_shader.setUniform("uResolution", [WIDTH, HEIGHT]);
+  a_shader.setUniform("uResolution", [p.width, p.height]);
 
   p.shader(a_shader);
   p.quad(-1, 1, -1, -1, 1, -1, 1, 1);
