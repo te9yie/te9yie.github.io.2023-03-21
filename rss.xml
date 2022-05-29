@@ -4,9 +4,18 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Sat, 28 May 2022 19:10:31 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 May 2022 19:11:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[2022-05-29]]></title>
+            <link>https://te9yie.github.io/2022-05-29</link>
+            <guid>https://te9yie.github.io/2022-05-29</guid>
+            <pubDate>Sun, 29 May 2022 13:14:02 GMT</pubDate>
+            <description><![CDATA[2022-05-29]]></description>
+            <content:encoded><![CDATA[<p>ふと目についた YouTube を気づいたら最後まで見ていた。リアルマインクラフトみたいな感じ。少しずつモノが出来上がっていく過程が気になって見てしまう。そこまでこだわるんだ、みたいな。本当に二人で作っているわけではないだろうけどすごいな。</p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[JavaScript での配列操作いろいろ]]></title>
             <link>https://te9yie.github.io/JavaScript%20%E3%81%A7%E3%81%AE%E9%85%8D%E5%88%97%E6%93%8D%E4%BD%9C%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D</link>
@@ -67,34 +76,6 @@ ary.filter((data, i, self) => self.indexOf(data) === i);
 <p><a href="/act">act</a> という GitHub Actions をローカルで実行できるものがあるらしい。</p>
 <p><a href="https://github.com/nektos/act">https://github.com/nektos/act</a></p>
 <p>でも <code>gh-pages</code> ブランチにファイルコピーとかテストも結構厳しい気がするなあ。</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[2022-05-23]]></title>
-            <link>https://te9yie.github.io/2022-05-23</link>
-            <guid>https://te9yie.github.io/2022-05-23</guid>
-            <pubDate>Wed, 25 May 2022 09:01:53 GMT</pubDate>
-            <description><![CDATA[2022-05-23]]></description>
-            <content:encoded><![CDATA[<p>このサイトがいつ頃更新されたか、更新頻度はどんな感じか分かるといいなあと思った。そういえば <a href="/GitHub">GitHub</a> で草が生える仕組みがそれっぽい。サイトの更新情報から GitHub の<a href="/草画像">草画像</a>のようなものを生成する、そんなものを作ってみたい。</p>
-<p>記事の履歴で取るか、<a href="/Git">Git</a> の履歴で取るか、記事の履歴で取るなら最新だけとるのか、色々仕様は考えられる。まずは一番簡単そうな Git の履歴で取ってみるか…</p>
-<p>画像の生成は <a href="/Node.js">Node.js</a> でやりたい。リンク情報つくったりも Node.js でやっているし。Canvas に描いた画像を出力する、みたいなことができればよいと思う。そんなことできるのかは知らんけど。</p>
-<p>Node.js で画像出力を調べているときに <a href="/Deno">Deno</a> というものを見つけた。</p>
-<p><a href="https://deno.land/">https://deno.land/</a></p>
-<p>Node.js の進化版みたいな感じっぽい。URL で import できるあたりがすてき。<code>package.json</code> とかが必要なくなって <code>deno run &#x3C;file></code> で実行できてちょっとしたことならこれでいいんじゃないか感。</p>
-<p>Deno で Canvas に描いた絵を画像として出力するのはこんな感じでできる。</p>
-<pre><code>import { createCanvas } from "https://deno.land/x/canvas/mod.ts";
-
-const canvas = createCanvas(200, 200);
-const ctx = canvas.getContext("2d");
-
-ctx.fillStyle = "red";
-ctx.fillRect(50, 50, 200 - 100, 200 - 100);
-
-await Deno.writeFile("image.png", canvas.toBuffer());
-</code></pre>
-<p>そして実行はこれだけ</p>
-<pre><code>$ deno run --allow-write create-image.js
-</code></pre>
 ]]></content:encoded>
         </item>
     </channel>
