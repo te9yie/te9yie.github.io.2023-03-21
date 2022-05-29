@@ -1,16 +1,15 @@
-import React from "react";
+import dynamic from "next/dynamic";
+
+const EmbededYouTube = dynamic(
+  () => import("react-youtube").then((m) => m.default),
+  {
+    ssr: false,
+  }
+);
 
 const YouTube = (props) => (
   <div className="youtube">
-    <iframe
-      width={560}
-      height={315}
-      src={`https://www.youtube.com/embed/${props.videoId}`}
-      title="YouTube video player"
-      frameBorder={0}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
+    <EmbededYouTube {...props} />
   </div>
 );
 
