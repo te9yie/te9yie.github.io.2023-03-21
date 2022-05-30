@@ -1,17 +1,6 @@
-import dynamic from "next/dynamic";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-const EmbededYouTube = dynamic(
-  () => import("react-youtube").then((m) => m.default),
-  {
-    loading: () => <></>,
-    ssr: false,
-  }
-);
-
-const YouTube = (props) => (
-  <div className="youtube">
-    <EmbededYouTube {...props} />
-  </div>
-);
+const YouTube = (props) => <LiteYouTubeEmbed {...props} />;
 
 export default YouTube;
