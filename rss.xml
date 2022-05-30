@@ -4,16 +4,47 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Mon, 30 May 2022 01:10:30 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 May 2022 19:10:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[p5.js in Next.js]]></title>
+            <link>https://te9yie.github.io/p5.js%20in%20Next.js</link>
+            <guid>https://te9yie.github.io/p5.js%20in%20Next.js</guid>
+            <pubDate>Mon, 30 May 2022 21:30:50 GMT</pubDate>
+            <description><![CDATA[p5.js in Next.js]]></description>
+            <content:encoded><![CDATA[<p><a href="/Next.js">Next.js</a> 上で <a href="/p5.js">p5.js</a> が動かせないかなと思って調べると react-p5 というものがあった。</p>
+<p><a href="https://www.npmjs.com/package/react-p5">https://www.npmjs.com/package/react-p5</a></p>
+<p>p5.js のプログラム一つに対してコンポーネントを一つ作っていくというのも大げさだなと思うので、引数でスクリプトを指定できるようにしたい。</p>
+<pre><code>Markdown からはこんなかんじのタグで指定できるようになるといいな。
+
+&#x3C;P5Sketch name="スクリプト名" />
+</code></pre>
+<p>ちょこっと Next.js 用のサンプルをいじって対応した。</p>
+<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js">https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js</a></p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[YouTube を埋め込む]]></title>
+            <link>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</link>
+            <guid>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</guid>
+            <pubDate>Mon, 30 May 2022 21:26:58 GMT</pubDate>
+            <description><![CDATA[YouTube を埋め込む]]></description>
+            <content:encoded><![CDATA[<p><a href="/YouTube">YouTube</a> を埋め込みたくて react-youtube を使ってみた。</p>
+<p><a href="https://github.com/tjallingt/react-youtube">https://github.com/tjallingt/react-youtube</a></p>
+<p>これで良いかなと思っていたが、なんか重くないか？と思った。<a href="/PageSpeed Insights">PageSpeed Insights</a> で確認したらめちゃくちゃパフォーマンスが悪化していた。</p>
+<p><a href="https://pagespeed.web.dev/?hl=ja">https://pagespeed.web.dev/?hl=ja</a></p>
+<p>やはり YouTube 関連のものが原因で重くなっていた。調べてみると色々な対応方法があったけど、一番かんたんそうな react-lite-youtube-embed をつかうことにした。</p>
+<p><a href="https://github.com/ibrahimcesar/react-lite-youtube-embed">https://github.com/ibrahimcesar/react-lite-youtube-embed</a></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-05-29]]></title>
             <link>https://te9yie.github.io/2022-05-29</link>
             <guid>https://te9yie.github.io/2022-05-29</guid>
-            <pubDate>Mon, 30 May 2022 10:08:42 GMT</pubDate>
+            <pubDate>Mon, 30 May 2022 10:15:02 GMT</pubDate>
             <description><![CDATA[2022-05-29]]></description>
-            <content:encoded><![CDATA[<p>ふと目についた YouTube を気づいたら最後まで見ていた。リアルマインクラフトみたいな感じ。少しずつモノが出来上がっていく過程が気になって見てしまう。そこまでこだわるんだ、みたいな。本当に二人で作っているわけではないだろうけどすごいな。</p>
+            <content:encoded><![CDATA[<p>ふと目についた <a href="/YouTube">YouTube</a> を気づいたら最後まで見ていた。リアル<a href="/マインクラフト">マインクラフト</a>みたいな感じ。少しずつモノが出来上がっていく過程が気になって見てしまう。そこまでこだわるんだ、みたいな。本当に二人で作っているわけではないだろうけどすごいな。</p>
 ]]></content:encoded>
         </item>
         <item>
@@ -45,37 +76,6 @@ ary.filter((data, i, self) => self.indexOf(data) === i);
 <hr>
 <p><a href="/p5.js">p5.js</a> でシェーダーが使えることが分かった。</p>
 <p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/libs/p5/shader00.js">https://github.com/te9yie/te9yie.github.io/blob/main/libs/p5/shader00.js</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[2022-05-25]]></title>
-            <link>https://te9yie.github.io/2022-05-25</link>
-            <guid>https://te9yie.github.io/2022-05-25</guid>
-            <pubDate>Wed, 25 May 2022 19:08:55 GMT</pubDate>
-            <description><![CDATA[2022-05-25]]></description>
-            <content:encoded><![CDATA[<p>このサイトが更新される時間を朝の 4 時にしようと思って <a href="/GitHub Actions">GitHub Actions</a> には schedule trigger を設定しておいた。</p>
-<pre><code>on:
-  schedule:
-    - cron: "0 19 * * *"
-</code></pre>
-<p>どうもその時間に動いたみたいなんだけど、<a href="/草画像">草画像</a>が今日更新された状態になっていない。多分、<a href="/JavaScript">JavaScript</a> で <code>new Date()</code> したときに JST でなく UTC で判定されている気がする。タイムゾーンを設定して実行するようにしてみた。これで上手く動くといいんだけど。</p>
-<hr>
-<p>タイトルを付けることが面倒な日々のメモは日付をタイトルにしている。このフォーマットで書かれたページだけ日誌みたいな感じで別管理にしようかなと思った。トップページで直近何日か分くらいが展開されて見えるようになっているとか、日誌ページに列挙されるとか。</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[2022-05-24]]></title>
-            <link>https://te9yie.github.io/2022-05-24</link>
-            <guid>https://te9yie.github.io/2022-05-24</guid>
-            <pubDate>Wed, 25 May 2022 09:01:53 GMT</pubDate>
-            <description><![CDATA[2022-05-24]]></description>
-            <content:encoded><![CDATA[<p>更新履歴から<a href="/草画像">草画像</a>をつくるプログラムはできた。</p>
-<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/gen-grass.js">https://github.com/te9yie/te9yie.github.io/blob/main/gen-grass.js</a></p>
-<p>この画像は毎日更新されるようにしたい。<a href="/cron">cron</a> みたいなもので画像を更新できればいいんだけど、<a href="/GitHub Actions">GitHub Actions</a> で <code>gh-pages</code> ブランチの一ファイルを更新する方法がよく分からない。とりあえず全ビルド回す感じでいいか…</p>
-<p>そうなるとリポジトリへの <code>push</code> をトリガーにしてビルド回す意味もあまりないかなという気がしてきた。一日一回更新されるで問題ない気がする。こういう GitHub Actions の動作テストってうまいやり方あるんだろうか。何かミスっていても一日一回しか確認できないのは辛い。</p>
-<p><a href="/act">act</a> という GitHub Actions をローカルで実行できるものがあるらしい。</p>
-<p><a href="https://github.com/nektos/act">https://github.com/nektos/act</a></p>
-<p>でも <code>gh-pages</code> ブランチにファイルコピーとかテストも結構厳しい気がするなあ。</p>
 ]]></content:encoded>
         </item>
     </channel>
