@@ -82,3 +82,7 @@ h2 a {
 .sketch {
     text-align: center;
 }
+
+.lty-playbtn {
+    border: 0;
+}
