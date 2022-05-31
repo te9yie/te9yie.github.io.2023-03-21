@@ -13,6 +13,20 @@ const list = fs.readdirSync(POSTS_DIR).map((file) => {
   )
     .toString()
     .trim();
+  if (!create_at) {
+    let now = new Date();
+    let month = (now.getMonth() + 1).toString().padStart(2, 0);
+    let date = now.getDate().toString().padStart(2, 0);
+    let hour = now.getHours().toString().padStart(2, 0);
+    let minute = now.getMinutes().toString().padStart(2, 0);
+    let sec = now.getSeconds().toString().padStart(2, 0);
+    let now_str = `${now.getFullYear()}-${month}-${date} ${hour}:${minute}:${sec}`;
+    return {
+      id: file.replace(/\.md$/, ""),
+      create_at: now_str,
+      update_at: now_str,
+    };
+  }
   const update_at = execSync(
     `git log -1 --pretty="%ad" --date=format:"%Y-%m-%d %H:%M:%S" -- "${filePath}"`
   )
@@ -23,9 +37,6 @@ const list = fs.readdirSync(POSTS_DIR).map((file) => {
     create_at,
     update_at,
   };
-});
-list.sort((a, b) => {
-  return a.update_at < b.update_at ? 1 : -1;
 });
 
 fs.mkdirSync(GEN_DIR, { recursive: true });

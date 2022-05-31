@@ -14,8 +14,11 @@ const DATE_FILE = path.join(GEN_DIR, "date.json");
 const RSS_FILE = path.join(OUT_DIR, "rss.xml");
 
 const getSortedPostsData = (n) => {
-  const dateJson = JSON.parse(fs.readFileSync(DATE_FILE, "utf8"));
-  return dateJson.slice(0, n);
+  return JSON.parse(fs.readFileSync(DATE_FILE, "utf8"))
+    .sort((a, b) => {
+      return a.update_at < b.update_at ? 1 : -1;
+    })
+    .slice(0, n);
 };
 
 const genRss = () => {

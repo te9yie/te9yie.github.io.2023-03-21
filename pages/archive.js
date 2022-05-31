@@ -2,7 +2,7 @@ import Link from "next/link";
 import Nav from "../components/Nav";
 import Title from "../components/Title";
 import Footer from "../components/Footer";
-import { getSortedAllPostIds } from "../libs/posts";
+import { getSortedUpdatePostIds } from "../libs/posts";
 
 const ArchivePage = ({ ids }) => {
   const List = () => {
@@ -30,7 +30,7 @@ const ArchivePage = ({ ids }) => {
 };
 
 export const getStaticProps = () => {
-  const ids = getSortedAllPostIds();
+  const ids = getSortedUpdatePostIds();
   return {
     props: {
       ids,

@@ -4,9 +4,9 @@ import Title from "../components/Title";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import {
-  getDailyPostIds,
   getPostData,
-  getSortedAllPostIds,
+  getSortedCreatePostIds,
+  getSortedUpdatePostIds,
 } from "../libs/posts";
 import { components, remarkPlugins } from "../libs/mdx";
 import { serialize } from "next-mdx-remote/serialize";
@@ -60,10 +60,10 @@ const IndexPage = ({ daily, ids }) => {
 
 export const getStaticProps = async () => {
   const daily = await Promise.all(
-    getDailyPostIds()
+    getSortedCreatePostIds()
       .slice(0, DAILY_N)
-      .map(async (id) => {
-        const postData = getPostData(id);
+      .map(async (data) => {
+        const postData = getPostData(data.id);
         postData.content = await serialize(postData.content, {
           components,
           mdxOptions: {
@@ -73,7 +73,7 @@ export const getStaticProps = async () => {
         return postData;
       })
   );
-  const ids = getSortedAllPostIds().slice(0, LIST_N);
+  const ids = getSortedUpdatePostIds().slice(0, LIST_N);
   return {
     props: {
       daily,

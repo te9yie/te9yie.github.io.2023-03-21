@@ -4,9 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "lint": "next lint",
-    "build:updated": "node gen-updated.js",
+    "build:date": "node gen-date.js",
     "build:links": "node gen-links.js",
-    "build:gen": "yarn build:updated && yarn build:links",
+    "build:gen": "yarn build:date && yarn build:links",
     "build": "yarn build:gen && next build",
     "start": "next start",
     "export": "next export",
