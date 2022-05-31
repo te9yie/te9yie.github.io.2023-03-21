@@ -3,11 +3,7 @@ import Link from "next/link";
 import Title from "../components/Title";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import {
-  getPostData,
-  getSortedCreatePostIds,
-  getSortedUpdatePostIds,
-} from "../libs/posts";
+import { getPostData, getSortedCreatePostIds } from "../libs/posts";
 import { components, remarkPlugins } from "../libs/mdx";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -73,7 +69,7 @@ export const getStaticProps = async () => {
         return postData;
       })
   );
-  const ids = getSortedUpdatePostIds().slice(0, LIST_N);
+  const ids = getSortedCreatePostIds().slice(0, LIST_N);
   return {
     props: {
       daily,
