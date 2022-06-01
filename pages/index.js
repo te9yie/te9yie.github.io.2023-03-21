@@ -12,6 +12,16 @@ const DAILY_N = 1;
 const LIST_N = 10;
 
 const IndexPage = ({ daily, ids }) => {
+  const isDev = process.env.NODE_ENV === "development";
+
+  const Grass = () => {
+    return isDev ? null : (
+      <div className="grass">
+        <img src="/grass.png" alt="grass" width={540} height={70} />
+      </div>
+    );
+  };
+
   const Daily = () => {
     return daily.length === 0 ? null : (
       <div className="daily">
@@ -26,12 +36,13 @@ const IndexPage = ({ daily, ids }) => {
       </div>
     );
   };
+
   const List = () => {
     return ids.length === 0 ? null : (
       <ul>
-        {ids.map(({ id, update_at }) => (
+        {ids.map(({ id, create_at }) => (
           <li key={id}>
-            {update_at}{" "}
+            {create_at}{" "}
             <Link href={`/${id}`}>
               <a>{id}</a>
             </Link>
@@ -40,13 +51,12 @@ const IndexPage = ({ daily, ids }) => {
       </ul>
     );
   };
+
   return (
     <>
       <Title />
       <Nav isIndex={true} />
-      <div className="grass">
-        <img src="/grass.png" alt="grass" width={540} height={70} />
-      </div>
+      <Grass />
       <Daily />
       <List />
       <Footer />
