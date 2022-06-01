@@ -3,36 +3,17 @@ import Link from "next/link";
 import Title from "../components/Title";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { getPostData, getSortedCreatePostIds } from "../libs/posts";
-import { components, remarkPlugins } from "../libs/mdx";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
+import { getSortedCreatePostIds } from "../libs/posts";
 
-const DAILY_N = 1;
 const LIST_N = 10;
 
-const IndexPage = ({ daily, ids }) => {
+const IndexPage = ({ ids }) => {
   const isDev = process.env.NODE_ENV === "development";
 
   const Grass = () => {
     return isDev ? null : (
       <div className="grass">
         <img src="/grass.png" alt="grass" width={540} height={70} />
-      </div>
-    );
-  };
-
-  const Daily = () => {
-    return daily.length === 0 ? null : (
-      <div className="daily">
-        {daily.map((postData) => (
-          <article key={postData.id}>
-            <h2>
-              <Link href={`/${postData.id}`}>{postData.id}</Link>
-            </h2>
-            <MDXRemote {...postData.content} components={components} />
-          </article>
-        ))}
       </div>
     );
   };
@@ -57,7 +38,6 @@ const IndexPage = ({ daily, ids }) => {
       <Title />
       <Nav isIndex={true} />
       <Grass />
-      <Daily />
       <List />
       <Footer />
     </>
@@ -65,24 +45,9 @@ const IndexPage = ({ daily, ids }) => {
 };
 
 export const getStaticProps = async () => {
-  const daily = await Promise.all(
-    getSortedCreatePostIds()
-      .slice(0, DAILY_N)
-      .map(async (data) => {
-        const postData = getPostData(data.id);
-        postData.content = await serialize(postData.content, {
-          components,
-          mdxOptions: {
-            remarkPlugins,
-          },
-        });
-        return postData;
-      })
-  );
   const ids = getSortedCreatePostIds().slice(0, LIST_N);
   return {
     props: {
-      daily,
       ids,
     },
   };
