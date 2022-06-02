@@ -9,3 +9,11 @@ https://pagespeed.web.dev/?hl=ja
 やはり YouTube 関連のものが原因で重くなっていた。調べてみると色々な対応方法があったけど、一番かんたんそうな react-lite-youtube-embed をつかうことにした。
 
 https://github.com/ibrahimcesar/react-lite-youtube-embed
+
+必須プロパティは `id` と `title`。このサイトでは `YouTube` タグとして [[MDX]] で使えるようにした。
+
+```markdown
+こんな感じで指定する。
+
+<YouTube id="<英数字のやつ>" title="<iFrame用のタイトル>" />
+```

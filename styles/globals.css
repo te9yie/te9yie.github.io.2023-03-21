@@ -52,6 +52,7 @@ h2 a {
 }
 
 .post-footer {
+    margin-top: 1ex;
     border-top: 1px solid #888;
 }
 .post-footer .date {
