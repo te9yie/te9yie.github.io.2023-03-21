@@ -4,9 +4,38 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Thu, 02 Jun 2022 19:10:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 03 Jun 2022 19:09:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[2022-06-03]]></title>
+            <link>https://te9yie.github.io/2022-06-03</link>
+            <guid>https://te9yie.github.io/2022-06-03</guid>
+            <pubDate>Fri, 03 Jun 2022 18:59:34 GMT</pubDate>
+            <description><![CDATA[2022-06-03]]></description>
+            <content:encoded><![CDATA[<p>早起きして <a href="/State of Play">State of Play</a> 見てた。</p>
+<p>召喚獣合戦だ！</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[YouTube を埋め込む]]></title>
+            <link>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</link>
+            <guid>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</guid>
+            <pubDate>Fri, 03 Jun 2022 08:24:30 GMT</pubDate>
+            <description><![CDATA[YouTube を埋め込む]]></description>
+            <content:encoded><![CDATA[<p><a href="/YouTube">YouTube</a> を埋め込みたくて react-youtube を使ってみた。</p>
+<p><a href="https://github.com/tjallingt/react-youtube">https://github.com/tjallingt/react-youtube</a></p>
+<p>これで良いかなと思っていたが、なんか重くないか？と思った。<a href="/PageSpeed Insights">PageSpeed Insights</a> で確認したらめちゃくちゃパフォーマンスが悪化していた。</p>
+<p><a href="https://pagespeed.web.dev/?hl=ja">https://pagespeed.web.dev/?hl=ja</a></p>
+<p>やはり YouTube 関連のものが原因で重くなっていた。調べてみると色々な対応方法があったけど、一番かんたんそうな react-lite-youtube-embed をつかうことにした。</p>
+<p><a href="https://github.com/ibrahimcesar/react-lite-youtube-embed">https://github.com/ibrahimcesar/react-lite-youtube-embed</a></p>
+<p>必須プロパティは <code>id</code> と <code>title</code>。このサイトでは <code>YouTube</code> タグとして <a href="/MDX">MDX</a> で使えるようにした。</p>
+<pre><code>こんな感じで指定する。
+
+&#x3C;YouTube id="&#x3C;英数字のやつ>" title="&#x3C;iFrame用のタイトル>" />
+</code></pre>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-06-01]]></title>
             <link>https://te9yie.github.io/2022-06-01</link>
@@ -44,29 +73,6 @@
 </code></pre>
 <p>ちょこっと Next.js 用のサンプルをいじって対応した。</p>
 <p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js">https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[YouTube を埋め込む]]></title>
-            <link>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</link>
-            <guid>https://te9yie.github.io/YouTube%20%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80</guid>
-            <pubDate>Mon, 30 May 2022 21:26:58 GMT</pubDate>
-            <description><![CDATA[YouTube を埋め込む]]></description>
-            <content:encoded><![CDATA[<p><a href="/YouTube">YouTube</a> を埋め込みたくて react-youtube を使ってみた。</p>
-<p><a href="https://github.com/tjallingt/react-youtube">https://github.com/tjallingt/react-youtube</a></p>
-<p>これで良いかなと思っていたが、なんか重くないか？と思った。<a href="/PageSpeed Insights">PageSpeed Insights</a> で確認したらめちゃくちゃパフォーマンスが悪化していた。</p>
-<p><a href="https://pagespeed.web.dev/?hl=ja">https://pagespeed.web.dev/?hl=ja</a></p>
-<p>やはり YouTube 関連のものが原因で重くなっていた。調べてみると色々な対応方法があったけど、一番かんたんそうな react-lite-youtube-embed をつかうことにした。</p>
-<p><a href="https://github.com/ibrahimcesar/react-lite-youtube-embed">https://github.com/ibrahimcesar/react-lite-youtube-embed</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[2022-05-29]]></title>
-            <link>https://te9yie.github.io/2022-05-29</link>
-            <guid>https://te9yie.github.io/2022-05-29</guid>
-            <pubDate>Mon, 30 May 2022 10:15:02 GMT</pubDate>
-            <description><![CDATA[2022-05-29]]></description>
-            <content:encoded><![CDATA[<p>ふと目についた <a href="/YouTube">YouTube</a> を気づいたら最後まで見ていた。リアル<a href="/マインクラフト">マインクラフト</a>みたいな感じ。少しずつモノが出来上がっていく過程が気になって見てしまう。そこまでこだわるんだ、みたいな。本当に二人で作っているわけではないだろうけどすごいな。</p>
 ]]></content:encoded>
         </item>
     </channel>
