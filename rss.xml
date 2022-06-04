@@ -4,9 +4,25 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Fri, 03 Jun 2022 19:09:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 04 Jun 2022 19:09:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Godot でピクセルパーフェクトにする]]></title>
+            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E3%83%94%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B</link>
+            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E3%83%94%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B</guid>
+            <pubDate>Sat, 04 Jun 2022 09:19:36 GMT</pubDate>
+            <description><![CDATA[Godot でピクセルパーフェクトにする]]></description>
+            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> に画像をインポートして表示したらリニア補間されたような表示になっていて<a href="/ドット絵">ドット絵</a>がボケボケになっていた。</p>
+<h2>画像のインポート設定</h2>
+<ol>
+<li>インポートした画像を選択して「インポート」タブを開く</li>
+<li>「プリセット」をクリックして「2D Pixel」を選ぶ</li>
+<li>「再インポート」をクリックする</li>
+</ol>
+<p><a href="https://docs.godotengine.org/ja/stable/tutorials/assets_pipeline/importing_images.html">https://docs.godotengine.org/ja/stable/tutorials/assets_pipeline/importing_images.html</a></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-06-03]]></title>
             <link>https://te9yie.github.io/2022-06-03</link>
@@ -56,23 +72,6 @@
             <description><![CDATA[Godot で UI をつくる]]></description>
             <content:encoded><![CDATA[<p>ゲームシーンの座標系とは別に画面の位置で UI 表示がしたい。<a href="/Godot">Godot</a> では <code>CanvasLayer</code> というものを使う。</p>
 <p><a href="https://docs.godotengine.org/ja/stable/tutorials/2d/canvas_layers.html">https://docs.godotengine.org/ja/stable/tutorials/2d/canvas_layers.html</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[p5.js in Next.js]]></title>
-            <link>https://te9yie.github.io/p5.js%20in%20Next.js</link>
-            <guid>https://te9yie.github.io/p5.js%20in%20Next.js</guid>
-            <pubDate>Mon, 30 May 2022 21:30:50 GMT</pubDate>
-            <description><![CDATA[p5.js in Next.js]]></description>
-            <content:encoded><![CDATA[<p><a href="/Next.js">Next.js</a> 上で <a href="/p5.js">p5.js</a> が動かせないかなと思って調べると react-p5 というものがあった。</p>
-<p><a href="https://www.npmjs.com/package/react-p5">https://www.npmjs.com/package/react-p5</a></p>
-<p>p5.js のプログラム一つに対してコンポーネントを一つ作っていくというのも大げさだなと思うので、引数でスクリプトを指定できるようにしたい。</p>
-<pre><code>Markdown からはこんなかんじのタグで指定できるようになるといいな。
-
-&#x3C;P5Sketch name="スクリプト名" />
-</code></pre>
-<p>ちょこっと Next.js 用のサンプルをいじって対応した。</p>
-<p><a href="https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js">https://github.com/te9yie/te9yie.github.io/blob/main/components/P5Sketch.js</a></p>
 ]]></content:encoded>
         </item>
     </channel>
