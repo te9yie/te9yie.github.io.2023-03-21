@@ -1,6 +1,6 @@
 #[[Godot]]
 
-YSort ノードを使う。
+`YSort` ノードを使う。
 
 https://docs.godotengine.org/ja/stable/classes/class_ysort.html
 
