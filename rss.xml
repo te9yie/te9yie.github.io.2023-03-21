@@ -4,9 +4,44 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Sun, 05 Jun 2022 19:10:44 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Jun 2022 19:11:15 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Godot で図形を描画する]]></title>
+            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</link>
+            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</guid>
+            <pubDate>Mon, 06 Jun 2022 08:24:01 GMT</pubDate>
+            <description><![CDATA[Godot で図形を描画する]]></description>
+            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> で矩形や球を描画したいと思った。メッシュを作ったりして色々面倒なのかなと思ったら <code>CanvasItem</code> に <code>draw_*</code> 系のメソッドがあった。</p>
+<p><a href="https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html">https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html</a>
+<a href="https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html">https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html</a></p>
+<p>とりあえず <code>Node2D</code> を継承して描いてみる。</p>
+<pre><code>extends Node2D
+
+func _draw():
+    draw_rect(Rect2(0, 0, 20, 20), Color.red)
+</code></pre>
+<p>これで左上に赤い四角が描ける。</p>
+<h2>文字列の描画</h2>
+<p>フォントを設定しての文字列描画もできる。</p>
+<pre><code>extends Node2D
+
+const font_data: DynamicFontData = preload("res://xxxx.ttf")
+
+var font: DynamicFont = DynamicFont.new()
+
+func _ready() -> void:
+	font.font_data = font_data
+	font.size = 26
+	font.outline_size = 1
+	font.outline_color = Color.white
+
+func _draw() -> void:
+	draw_string(font, Vector2(0, 0), "Hello, World!", Color.black)
+</code></pre>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Godot でグローバルな定数や関数を定義する]]></title>
             <link>https://te9yie.github.io/Godot%20%E3%81%A7%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%81%AA%E5%AE%9A%E6%95%B0%E3%82%84%E9%96%A2%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B</link>
@@ -53,24 +88,6 @@ func _process(delta: float) -> void:
 <p>スプライトの前後関係もテクスチャの下基準で Z ソートしたいんだけどタイルマップと普通のスプライトが関係したときにどうするのかとか、何をどう設定すればいいのかが分からない。<a href="/アルゴリズム">アルゴリズム</a>は分かるし作れるのにゲームエンジンの使い方は分からないので、じれったい。自分で作ったほうが早い、みたいな気持ちになる――トータルで見たら絶対早くはないのに。</p>
 <p>見つけた。<code>YSort</code> ノードというものを使うみたい。</p>
 <p><a href="/Godot で Y 座標基準で Z ソートする">Godot で Y 座標基準で Z ソートする</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Godot で図形を描画する]]></title>
-            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</guid>
-            <pubDate>Sun, 05 Jun 2022 21:57:34 GMT</pubDate>
-            <description><![CDATA[Godot で図形を描画する]]></description>
-            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> で矩形や球を描画したいと思った。メッシュを作ったりして色々面倒なのかなと思ったら <code>CanvasItem</code> に <code>draw_*</code> 系のメソッドがあった。</p>
-<p><a href="https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html">https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html</a>
-<a href="https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html">https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html</a></p>
-<p>とりあえず <code>Node2D</code> を継承して描いてみる。</p>
-<pre><code>extends Node2D
-
-func _draw():
-    draw_rect(Rect2(0, 0, 20, 20), Color.red)
-</code></pre>
-<p>これで左上に赤い四角が描ける。</p>
 ]]></content:encoded>
         </item>
         <item>
