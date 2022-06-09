@@ -4,9 +4,23 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Wed, 08 Jun 2022 19:09:57 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Jun 2022 19:10:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[2022-06-09]]></title>
+            <link>https://te9yie.github.io/2022-06-09</link>
+            <guid>https://te9yie.github.io/2022-06-09</guid>
+            <pubDate>Thu, 09 Jun 2022 08:54:17 GMT</pubDate>
+            <description><![CDATA[2022-06-09]]></description>
+            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> の練習をしている。スクリプトとノードの使い分けに悩む。</p>
+<p><a href="/Godot で図形を描画する">Godot で図形を描画する</a>ことができるので、シンプルなテトリスくらいなら全部スクリプトで作れてしまう。多分 Godot のお作法的にはノードを組み合わせて（T とか L 字型の）ブロックやフィールドを作るのが正解なんだと思う。でもそういうノードをつくってスクリプトで<a href="/当たり判定">当たり判定</a>や移動を制御してノードと連動させるのが結構面倒くさい。これが<a href="/物理演算">物理演算</a>で動くブロックで当たると砕けるとか見た目を基準として挙動をつくっていくものであれば、作りやすい気はする。</p>
+<p>こういうエンジンを使ってつくる練習用の題材として<a href="/パズル">パズル</a>ゲームは向いていないのかもしれない。<a href="/2D シューティング">2D シューティング</a>ゲームのような見た目とコリジョンがあって当たったら反応するようなものの方が向いている気がする。</p>
+<hr>
+<p>操作中のブロックやフィールドとか色々考えていたけど、10x20 にブロックを敷き詰めたノードを作っておいてスクリプトからは位置と色を指定できるようにすればシンプルに実装できるかもしれない。―― 1 ドット単位で落下してくるとかにしたければ、これの手法では無理だけど。</p>
+<p><a href="/プログラミング">プログラミング</a>がしたくてスクリプトから書こうとしてしまうんだけど、まず見た目を考えてノードの設計をしてから作っていく方が良いのかもしれない。</p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Godot で図形を描画する]]></title>
             <link>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</link>
@@ -88,22 +102,6 @@ func _process(delta: float) -> void:
 <p>スプライトの前後関係もテクスチャの下基準で Z ソートしたいんだけどタイルマップと普通のスプライトが関係したときにどうするのかとか、何をどう設定すればいいのかが分からない。<a href="/アルゴリズム">アルゴリズム</a>は分かるし作れるのにゲームエンジンの使い方は分からないので、じれったい。自分で作ったほうが早い、みたいな気持ちになる――トータルで見たら絶対早くはないのに。</p>
 <p>見つけた。<code>YSort</code> ノードというものを使うみたい。</p>
 <p><a href="/Godot で Y 座標基準で Z ソートする">Godot で Y 座標基準で Z ソートする</a></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Godot でピクセルパーフェクトにする]]></title>
-            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E3%83%94%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E3%83%94%E3%82%AF%E3%82%BB%E3%83%AB%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B</guid>
-            <pubDate>Sat, 04 Jun 2022 09:19:36 GMT</pubDate>
-            <description><![CDATA[Godot でピクセルパーフェクトにする]]></description>
-            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> に画像をインポートして表示したらリニア補間されたような表示になっていて<a href="/ドット絵">ドット絵</a>がボケボケになっていた。</p>
-<h2>画像のインポート設定</h2>
-<ol>
-<li>インポートした画像を選択して「インポート」タブを開く</li>
-<li>「プリセット」をクリックして「2D Pixel」を選ぶ</li>
-<li>「再インポート」をクリックする</li>
-</ol>
-<p><a href="https://docs.godotengine.org/ja/stable/tutorials/assets_pipeline/importing_images.html">https://docs.godotengine.org/ja/stable/tutorials/assets_pipeline/importing_images.html</a></p>
 ]]></content:encoded>
         </item>
     </channel>
