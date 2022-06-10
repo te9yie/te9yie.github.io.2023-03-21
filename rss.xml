@@ -4,9 +4,20 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Thu, 09 Jun 2022 19:10:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Jun 2022 19:09:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[2022-06-10]]></title>
+            <link>https://te9yie.github.io/2022-06-10</link>
+            <guid>https://te9yie.github.io/2022-06-10</guid>
+            <pubDate>Fri, 10 Jun 2022 23:02:34 GMT</pubDate>
+            <description><![CDATA[2022-06-10]]></description>
+            <content:encoded><![CDATA[<p>Godot でブロックみたいなものを表示したいと思った。<a href="/ドット絵">ドット絵</a>で描くか <a href="/3D">3D</a> で<a href="/モデリング">モデリング</a>してもってくるかどうしよう、どうせなら 3D で作ってみようかと思って <a href="/Blender">Blender</a> を調べていたら、いつのまにかいろいろと進化していてびっくりした。</p>
+<p>Geometry Nodes っていう<a href="/プロシージャルモデリング">プロシージャルモデリング</a>ができるような仕組みが気になった。</p>
+<p><a href="/シェーダー">シェーダー</a>とかもそうだけど、ノードを使って<a href="/プロシージャル">プロシージャル</a>にものをつくるものが流行っているんだなあ。</p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-06-09]]></title>
             <link>https://te9yie.github.io/2022-06-09</link>
@@ -89,19 +100,6 @@ func _process(delta: float) -> void:
 <p><code>YSort</code> ノードを使う。</p>
 <p><a href="https://docs.godotengine.org/ja/stable/classes/class_ysort.html">https://docs.godotengine.org/ja/stable/classes/class_ysort.html</a></p>
 <p>このノードの子供にしたノードは Y 座標基準でソートされる。<a href="/タイルマップ">タイルマップ</a>も対応している。</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[2022-06-05]]></title>
-            <link>https://te9yie.github.io/2022-06-05</link>
-            <guid>https://te9yie.github.io/2022-06-05</guid>
-            <pubDate>Sun, 05 Jun 2022 21:58:10 GMT</pubDate>
-            <description><![CDATA[2022-06-05]]></description>
-            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> でグリッドで移動するものを作っている。伝統的な<a href="/ローグライク">ローグライク</a>のようなやつ――最近ローグライクって言葉が何を指し示しているのかがよく分からない。</p>
-<p><a href="/コリジョン判定">コリジョン判定</a>や<a href="/経路探索">経路探索</a>などが楽かなと思ってグリッドベースにしてみたんだけど、タイルにコリジョン設定して<a href="/物理エンジン">物理エンジン</a>で判定するみたいな機能が標準っぽくて、こういう<a href="/ゲームエンジン">ゲームエンジン</a>を使うと逆に大変なのかもしれない。逆に大変というか、どうやるのか調べたり用意されていないことをしようとするのに時間がかかる。単に通れる通れないの 2 値の 2 次元配列があって参照できるだけでいいんだけどな。</p>
-<p>スプライトの前後関係もテクスチャの下基準で Z ソートしたいんだけどタイルマップと普通のスプライトが関係したときにどうするのかとか、何をどう設定すればいいのかが分からない。<a href="/アルゴリズム">アルゴリズム</a>は分かるし作れるのにゲームエンジンの使い方は分からないので、じれったい。自分で作ったほうが早い、みたいな気持ちになる――トータルで見たら絶対早くはないのに。</p>
-<p>見つけた。<code>YSort</code> ノードというものを使うみたい。</p>
-<p><a href="/Godot で Y 座標基準で Z ソートする">Godot で Y 座標基準で Z ソートする</a></p>
 ]]></content:encoded>
         </item>
     </channel>
