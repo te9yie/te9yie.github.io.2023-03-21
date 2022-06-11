@@ -4,16 +4,16 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Fri, 10 Jun 2022 19:09:51 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Jun 2022 19:09:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[2022-06-10]]></title>
             <link>https://te9yie.github.io/2022-06-10</link>
             <guid>https://te9yie.github.io/2022-06-10</guid>
-            <pubDate>Fri, 10 Jun 2022 23:02:34 GMT</pubDate>
+            <pubDate>Sat, 11 Jun 2022 12:19:36 GMT</pubDate>
             <description><![CDATA[2022-06-10]]></description>
-            <content:encoded><![CDATA[<p>Godot でブロックみたいなものを表示したいと思った。<a href="/ドット絵">ドット絵</a>で描くか <a href="/3D">3D</a> で<a href="/モデリング">モデリング</a>してもってくるかどうしよう、どうせなら 3D で作ってみようかと思って <a href="/Blender">Blender</a> を調べていたら、いつのまにかいろいろと進化していてびっくりした。</p>
+            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> でブロックみたいなものを表示したいと思った。<a href="/ドット絵">ドット絵</a>で描くか <a href="/3D">3D</a> で<a href="/モデリング">モデリング</a>してもってくるかどうしよう、どうせなら 3D で作ってみようかと思って <a href="/Blender">Blender</a> を調べていたら、いつのまにかいろいろと進化していてびっくりした。</p>
 <p>Geometry Nodes っていう<a href="/プロシージャルモデリング">プロシージャルモデリング</a>ができるような仕組みが気になった。</p>
 <p><a href="/シェーダー">シェーダー</a>とかもそうだけど、ノードを使って<a href="/プロシージャル">プロシージャル</a>にものをつくるものが流行っているんだなあ。</p>
 ]]></content:encoded>
