@@ -4,9 +4,51 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Thu, 16 Jun 2022 19:09:11 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 17 Jun 2022 19:11:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[はじめての Tauri]]></title>
+            <link>https://te9yie.github.io/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%20Tauri</link>
+            <guid>https://te9yie.github.io/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%20Tauri</guid>
+            <pubDate>Fri, 17 Jun 2022 09:11:04 GMT</pubDate>
+            <description><![CDATA[はじめての Tauri]]></description>
+            <content:encoded><![CDATA[<p><a href="/Tauri">Tauri</a> はバックエンドが <a href="/Rust">Rust</a> の <a href="/Electron">Electron</a> みたいなものみたい。</p>
+<p><a href="https://tauri.app/">https://tauri.app/</a></p>
+<p>Electron はフロントエンドが <a href="/Chrome">Chrome</a>、バックエンドが <a href="/Node.js">Node.js</a>。Tauri はフロントエンドが OS ネイティブの Web レンダラで、バックエンドが Rust ということらしい。</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th>Tauri</th>
+<th>Electron</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><strong>フロントエンド</strong></td>
+<td>OS ネイティブの Web レンダラ</td>
+<td>Chrome</td>
+</tr>
+<tr>
+<td align="right"><strong>バックエンド</strong></td>
+<td>Rust</td>
+<td>Node.js</td>
+</tr>
+</tbody>
+</table>
+<p>公式サイトのガイドを参考にとりあえず動くものを作ってみる。</p>
+<pre><code>> npx create-tauri-app
+? What is your app name? hello
+? What should the window title be? Hello
+? What UI recipe would you like to add? Vanilla.js (html, css, and js without the bundlers)
+> cd hello
+> npm install
+> npm run tauri dev
+</code></pre>
+<p><img src="/hello-tauri.png" alt="hello"></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[2022-06-10]]></title>
             <link>https://te9yie.github.io/2022-06-10</link>
@@ -88,18 +130,6 @@ const Global = preload("res://global.gd")
 func _process(delta: float) -> void:
     Global.draw_block(2 * Global.block_size, 3 * Global.block_size)
 </code></pre>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Godot で Y 座標基準で Z ソートする]]></title>
-            <link>https://te9yie.github.io/Godot%20%E3%81%A7%20Y%20%E5%BA%A7%E6%A8%99%E5%9F%BA%E6%BA%96%E3%81%A7%20Z%20%E3%82%BD%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%20Y%20%E5%BA%A7%E6%A8%99%E5%9F%BA%E6%BA%96%E3%81%A7%20Z%20%E3%82%BD%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B</guid>
-            <pubDate>Sun, 05 Jun 2022 21:58:10 GMT</pubDate>
-            <description><![CDATA[Godot で Y 座標基準で Z ソートする]]></description>
-            <content:encoded><![CDATA[<p>#<a href="/Godot">Godot</a></p>
-<p><code>YSort</code> ノードを使う。</p>
-<p><a href="https://docs.godotengine.org/ja/stable/classes/class_ysort.html">https://docs.godotengine.org/ja/stable/classes/class_ysort.html</a></p>
-<p>このノードの子供にしたノードは Y 座標基準でソートされる。<a href="/タイルマップ">タイルマップ</a>も対応している。</p>
 ]]></content:encoded>
         </item>
     </channel>
