@@ -4,9 +4,81 @@
         <title>te9yie</title>
         <link>https://te9yie.github.io</link>
         <description>te9yie.github.io</description>
-        <lastBuildDate>Sat, 18 Jun 2022 19:10:21 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Jun 2022 19:09:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[マインクラフトにアドオンを入れる]]></title>
+            <link>https://te9yie.github.io/%E3%83%9E%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%81%AB%E3%82%A2%E3%83%89%E3%82%AA%E3%83%B3%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B</link>
+            <guid>https://te9yie.github.io/%E3%83%9E%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%81%AB%E3%82%A2%E3%83%89%E3%82%AA%E3%83%B3%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B</guid>
+            <pubDate>Sun, 19 Jun 2022 01:00:35 GMT</pubDate>
+            <description><![CDATA[マインクラフトにアドオンを入れる]]></description>
+            <content:encoded><![CDATA[<p><a href="/Java">Java</a> 版<a href="/マインクラフト">マインクラフト</a>だけではなく統合版でも<a href="/アドオン">アドオン</a>という仕組みでゲームが拡張できるみたい。<a href="/MOD">MOD</a> の呼び方違いなのかと思ったら仕組みが違うみたいで同じものではないらしい。</p>
+<p>ActualGuns 3D Add-on を入れてみる。</p>
+<p><a href="https://pixelpoly.co/content/actualguns-3d">https://pixelpoly.co/content/actualguns-3d</a></p>
+<p>ダウンロードして <code>ActualGuns_3D.mcaddon</code> を実行するだけだった。</p>
+<h2>サーバーに適用する</h2>
+<p><a href="/マインクラフトのサーバーを立てる">マインクラフトのサーバーを立てる</a>ことができたので、サーバーにもアドオンを適用したい。</p>
+<p><code>mcaddon</code> ファイルは実質 zip ファイルなので展開する。ActualGuns の場合 Behavior Pack と Resource Pack が含まれていた。</p>
+<pre><code>- ActualGuns_3D.mcaddon
+  +- ActualGuns [BP]
+  +- ActualGuns [RP]
+</code></pre>
+<p>それぞれをサーバーの <code>behavior_packs</code> フォルダと <code>resource_packs</code> フォルダに置いた。そして、適用するワールドの <code>world_behavior_packs.json</code> と <code>world_resource_packs.json</code> にアドオン情報を追記する。（事前にワールドは作っておく。ファイルが存在しない場合はファイルを作る）</p>
+<p>例：<code>world_behavior_packs.json</code></p>
+<pre><code>[
+  {
+    "pack_id": "227eb195-5c5c-405f-87fc-b11001aafd61",
+    "version": [1, 3, 3]
+  }
+]
+</code></pre>
+<p><code>pack_id</code>, <code>version</code> はそれぞれのアドオンのフォルダ内の <code>manifest.json</code> の <code>uuid</code>, <code>version</code> からコピーしてくる。</p>
+<p>例：<code>ActualGuns [BP]/manifest.json</code> の上部</p>
+<pre><code>{
+	"format_version": 2,
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "227eb195-5c5c-405f-87fc-b11001aafd61",
+		"version": [
+			1,
+			3,
+			3
+		],
+		"min_engine_version": [
+			1,
+			17,
+			30
+		],
+		"pack_scope": "world",
+		"platform_locked": false
+	},
+</code></pre>
+<p>これでサーバーを起動すれば適用されるはずだが、ActualGuns の場合は <code>Experimental Molang Features</code> と <code>Holiday Creator Features</code> を有効にしないといけない。サーバーで Experimental 機能を有効にする方法が見つからなかった。<code>server.properties</code> にも設定項目がない。</p>
+<p><code>server.properties</code> で設定できるようにしてくれ、という要望はずっとあるみたい。</p>
+<p><a href="https://feedback.minecraft.net/hc/en-us/community/posts/360048142731-Experimental-MODE-FOR-Dedicated-servers-BEDROCK-">https://feedback.minecraft.net/hc/en-us/community/posts/360048142731-Experimental-MODE-FOR-Dedicated-servers-BEDROCK-</a></p>
+<p>最終的には、一旦 ActualGuns アドオン有効にしたワールドをクライアントで作っておいて、そのワールドをサーバー側にコピーしてくる方法で対応できた。</p>
+<p>クライアントのワールドは <code>shell:local appdata</code> で <code>minecraftWorlds</code> を検索して見つけた。自分の場合、<code>&#x3C;shell:local appdata>\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds\</code> にあった。ここによく分からない名前のフォルダがある。それがワールドのフォルダでその中の <code>levelname.txt</code> を見ればワールド名が分かる。このワールドのフォルダを丸ごとサーバーの <code>worlds</code> フォルダに分かりやすい名前にリネームして持ってくる。（<code>world_behavior_packs.json</code> と <code>world_resource_packs.json</code> も含まれているので、上記の追記なんかも必要ない）</p>
+<p>あとは <code>server.properties</code> の <code>level-name</code> にフォルダ名を設定すればいけた。</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[マインクラフトのサーバーを立てる]]></title>
+            <link>https://te9yie.github.io/%E3%83%9E%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B</link>
+            <guid>https://te9yie.github.io/%E3%83%9E%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B</guid>
+            <pubDate>Sat, 18 Jun 2022 23:59:38 GMT</pubDate>
+            <description><![CDATA[マインクラフトのサーバーを立てる]]></description>
+            <content:encoded><![CDATA[<p><a href="/マインクラフト">マインクラフト</a>には <a href="/Java">Java</a> 版と統合版があって、Java 版は PC 向けで <a href="/MOD">MOD</a> を入れたりできて拡張性が高い。統合版はコンシューマ機向けで拡張性はないけどクロスプラットフォーム、みたいなイメージだった。</p>
+<p>サーバーを立てられるのは Java 版だけだと思っていたら、公式で統合版のサーバーが落とせるようになっていた。</p>
+<p><a href="https://www.minecraft.net/ja-jp/download/server/bedrock">https://www.minecraft.net/ja-jp/download/server/bedrock</a></p>
+<p>zip 内の <code>bedrock_server_how_to.html</code> に詳しいことは書いてある。<a href="/Windows">Windows</a> でサーバーを立ち上げて統合版を起動して localhost で接続してみようとしたら繋がらなかったが、その解決方法も書いてあった。ループバックが制限されているようだ。</p>
+<p><code>CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436</code></p>
+<h2>Switch から接続する</h2>
+<p><a href="/Switch">Switch</a> のマインクラフトからサーバーに接続しようと思ったら、サーバーの追加ができなかった。色々調べてみると Switch 本体の <a href="/DNS">DNS</a> を <code>104.238.130.180</code> と <code>8.8.8.8</code> にする方法が見つかった。</p>
+<p>公式サーバーを偽って誰かが作ってくれたサーバーにすげ替えてるんだろうけど、セキュリティ的に怖い手法だな。ちゃんとやるなら自前で DNS サーバー立てた方がよさそう。</p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[はじめての Tauri]]></title>
             <link>https://te9yie.github.io/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%20Tauri</link>
@@ -72,64 +144,6 @@
 <hr>
 <p>操作中のブロックやフィールドとか色々考えていたけど、10x20 にブロックを敷き詰めたノードを作っておいてスクリプトからは位置と色を指定できるようにすればシンプルに実装できるかもしれない。―― 1 ドット単位で落下してくるとかにしたければ、これの手法では無理だけど。</p>
 <p><a href="/プログラミング">プログラミング</a>がしたくてスクリプトから書こうとしてしまうんだけど、まず見た目を考えてノードの設計をしてから作っていく方が良いのかもしれない。</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Godot で図形を描画する]]></title>
-            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E5%9B%B3%E5%BD%A2%E3%82%92%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B</guid>
-            <pubDate>Mon, 06 Jun 2022 08:24:01 GMT</pubDate>
-            <description><![CDATA[Godot で図形を描画する]]></description>
-            <content:encoded><![CDATA[<p><a href="/Godot">Godot</a> で矩形や球を描画したいと思った。メッシュを作ったりして色々面倒なのかなと思ったら <code>CanvasItem</code> に <code>draw_*</code> 系のメソッドがあった。</p>
-<p><a href="https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html">https://docs.godotengine.org/ja/stable/tutorials/2d/custom_drawing_in_2d.html</a>
-<a href="https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html">https://docs.godotengine.org/ja/stable/classes/class_canvasitem.html</a></p>
-<p>とりあえず <code>Node2D</code> を継承して描いてみる。</p>
-<pre><code>extends Node2D
-
-func _draw():
-    draw_rect(Rect2(0, 0, 20, 20), Color.red)
-</code></pre>
-<p>これで左上に赤い四角が描ける。</p>
-<h2>文字列の描画</h2>
-<p>フォントを設定しての文字列描画もできる。</p>
-<pre><code>extends Node2D
-
-const font_data: DynamicFontData = preload("res://xxxx.ttf")
-
-var font: DynamicFont = DynamicFont.new()
-
-func _ready() -> void:
-	font.font_data = font_data
-	font.size = 26
-	font.outline_size = 1
-	font.outline_color = Color.white
-
-func _draw() -> void:
-	draw_string(font, Vector2(0, 0), "Hello, World!", Color.black)
-</code></pre>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Godot でグローバルな定数や関数を定義する]]></title>
-            <link>https://te9yie.github.io/Godot%20%E3%81%A7%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%81%AA%E5%AE%9A%E6%95%B0%E3%82%84%E9%96%A2%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B</link>
-            <guid>https://te9yie.github.io/Godot%20%E3%81%A7%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%81%AA%E5%AE%9A%E6%95%B0%E3%82%84%E9%96%A2%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B</guid>
-            <pubDate>Sun, 05 Jun 2022 23:48:04 GMT</pubDate>
-            <description><![CDATA[Godot でグローバルな定数や関数を定義する]]></description>
-            <content:encoded><![CDATA[<p>#<a href="/Godot">Godot</a></p>
-<p><code>const</code> や <code>static</code> を使えばできた。</p>
-<pre><code># global.gd
-const block_size: int = 10
-
-static func draw_block(x: int, y:int) -> void:
-    ...
-</code></pre>
-<p>使う側では <code>preload</code> を使って読み込む。</p>
-<pre><code># game.gd
-const Global = preload("res://global.gd")
-
-func _process(delta: float) -> void:
-    Global.draw_block(2 * Global.block_size, 3 * Global.block_size)
-</code></pre>
 ]]></content:encoded>
         </item>
     </channel>
